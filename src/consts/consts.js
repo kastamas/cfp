@@ -1,9 +1,10 @@
-
 const userChoice = {
-  averagePostsLength: 'averagePostsLength',
-  longestPostPerMonth: 'longestPostPerMonth',
-  averageNumberOfPostsPerUser: 'averageNumberOfPostsPerUser',
-  exit: 'exit'
+  averagePostsLength: "averagePostsLength",
+  longestPostPerMonth: "longestPostPerMonth",
+  averageNumberOfPostsPerUser: "averageNumberOfPostsPerUser",
+  totalPostsByWeek: "totalPostsByWeek",
+  retry: "retry",
+  exit: "exit"
 };
 
 exports.userChoice = userChoice;
