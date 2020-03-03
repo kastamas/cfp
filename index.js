@@ -47,24 +47,16 @@ const run = async () => {
 
     switch (choice) {
       case userChoice.averagePostsLength:
-        {
-          console.table(getAveragePostLengthPerMonth(posts));
-        }
+        console.table(getAveragePostLengthPerMonth(posts));
         break;
       case userChoice.longestPostPerMonth:
-        {
-          console.table(getLongestPostsPerMonth(posts));
-        }
+        console.table(getLongestPostsPerMonth(posts));
         break;
       case userChoice.averageNumberOfPostsPerUser:
-        {
-          console.table(getAverageNumberOfPostsPerUserPerMonth(posts));
-        }
+        console.table(getAverageNumberOfPostsPerUserPerMonth(posts));
         break;
       case userChoice.totalPostsByWeek:
-        {
-          console.table(getTotalPostsByWeek(posts));
-        }
+        console.table(getTotalPostsByWeek(posts));
         break;
       case userChoice.exit:
       default: {
