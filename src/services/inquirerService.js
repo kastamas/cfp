@@ -51,7 +51,9 @@ module.exports = {
         type: 'list',
         message: "What do you want?",
         choices: [
-          {name: "Average character length of a post", value: userChoice.averagePostsLength},
+          {name: "Get average length of a posts per month", value: userChoice.averagePostsLength},
+          {name: "Get average number of a posts per user per month", value: userChoice.averageNumberOfPostsPerUser},
+          {name: "Get longest posts per month", value: userChoice.longestPostPerMonth},
           new inquirerService.Separator(),
           {name: "Exit", value: userChoice.exit}
         ]

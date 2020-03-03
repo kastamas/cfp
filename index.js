@@ -20,18 +20,33 @@ const run = async () => {
   const token = await requestsService.getToken(userData);
   const posts = await requestsService.getPosts(token);
 
-  const { choice } = await inquirer.askUserChoice();
+  const switchChoice = async () => {
+    const { choice } = await inquirer.askUserChoice();
 
-  if (choice === userChoice.averagePostsLength) {
-    const result = dataProcessingService.getAveragePostLength(posts);
-    console.log(result);
-  }
+    if (choice === userChoice.averagePostsLength) {
+      const result = dataProcessingService.getAveragePostLengthPerMonth(posts);
+      console.table(result);
+    }
 
-  if (choice === userChoice.exit) {
-    process.exit();
-  }
+    if (choice === userChoice.longestPostPerMonth) {
+      const result = dataProcessingService.getLongestPostsPerMonth(posts);
+      console.table(result)
+    }
 
-  console.log(choice);
+    if (choice === userChoice.averageNumberOfPostsPerUser) {
+      const result = dataProcessingService.getAverageNumberOfPostsPerUserPerMonth(posts);
+      console.table(result);
+    }
+
+    if (choice === userChoice.exit) {
+      console.log("Bye!");
+      process.exit();
+    }
+
+    switchChoice();
+  };
+
+  switchChoice();
 };
 
 run();
